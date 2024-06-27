@@ -17,3 +17,7 @@ composer:
 ## 🚀🚀 Run an example
 run:
 	@php example.php
+
+## 🚀🚀 Update the airports file
+update:
+	@php update.php

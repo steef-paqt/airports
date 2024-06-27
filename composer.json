@@ -14,23 +14,8 @@
             "email": "steef.dewinter@paqt.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "mwgg/airports",
-                "version": "1.0",
-                "source": {
-                    "url": "https://github.com/mwgg/Airports",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
-    ],
     "require": {
         "php": "^8.2",
-        "mwgg/airports": "^1.0",
         "nesbot/carbon": "^3.6"
     },
     "require-dev": {

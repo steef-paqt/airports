@@ -10,9 +10,6 @@
 .env
 composer.lock
 
-# git submodules
-/data
-
 # validation/test artifacts
 .phpunit.result.cache
 .dev/config/.phpunit.result.cache

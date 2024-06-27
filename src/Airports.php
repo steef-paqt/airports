@@ -15,8 +15,7 @@ final class Airports
     public static function getAirports(): array
     {
         if (!self::$airports) {
-            $json = file_get_contents(dirname(__DIR__) . '/vendor/mwgg/airports/airports.json');
-            $json = str_replace('    "tz": ', '    "timezone": ', $json);
+            $json = self::getDataJson();
             $airports = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
             foreach ($airports as $code => $airport) {
                 self::$airports[$code] = new Airport(...$airport);
@@ -72,5 +71,18 @@ final class Airports
         }
 
         return $list;
+    }
+
+    private static function getDataJson(): string
+    {
+        $filePath = dirname(__DIR__) . '/data/airports.json';
+        if (!file_exists($filePath)) {
+            $json = file_get_contents('https://github.com/mwgg/Airports/raw/master/airports.json');
+            file_put_contents($filePath, $json);
+        } else {
+            $json = file_get_contents($filePath);
+        }
+
+        return (string) str_replace('    "tz": ', '    "timezone": ', $json);
     }
 }
