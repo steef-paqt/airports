@@ -11,7 +11,7 @@ final readonly class Airport
      */
     public function __construct(
         public string $icao,
-        public string $iata,
+        public ?string $iata,
         public string $name,
         public string $city,
         public string $state,
