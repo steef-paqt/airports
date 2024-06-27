@@ -91,4 +91,5 @@ return $config->setRules([
         'trim_array_spaces'                           => true,
         'whitespace_after_comma_in_array'             => true,
     ])
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setLineEnding("\n");
